@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #162033;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.layout {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #dbe3f0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 35px rgba(22, 32, 51, 0.08);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4c6ef5;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #52607a;
+  max-width: 760px;
+}
+
+.primary,
+.ghost,
+.tab-button {
+  border-radius: 999px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primary {
+  background: #243bff;
+  color: white;
+}
+
+.primary:disabled {
+  background: #9aa8d9;
+  cursor: not-allowed;
+}
+
+.ghost,
+.tab-button {
+  background: white;
+  border-color: #c9d4e7;
+}
+
+.hidden {
+  display: none;
+}
+
+.create-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.create-form label,
+.search-field {
+  display: grid;
+  gap: 8px;
+  color: #344054;
+  font-weight: 600;
+}
+
+input {
+  border: 1px solid #c9d4e7;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.create-actions,
+.studio-actions {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 14px 12px;
+  border-bottom: 1px solid #e7edf6;
+}
+
+th {
+  color: #52607a;
+}
+
+.empty-state {
+  text-align: center;
+  color: #6b7894;
+}
+
+.action-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.studio-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tab-strip {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-button.active {
+  background: #e8ecff;
+  border-color: #243bff;
+  color: #172554;
+}
+
+.status-message {
+  min-height: 24px;
+  color: #52607a;
+  margin-bottom: 12px;
+}
+
+.glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.glyph-card {
+  border: 1px solid #dbe3f0;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fbfcff;
+}
+
+.glyph-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.glyph-card h3,
+.glyph-card p {
+  margin: 0;
+}
+
+.glyph-meta {
+  color: #52607a;
+  font-size: 13px;
+}
+
+.glyph-canvas {
+  width: 100%;
+  max-width: 192px;
+  border: 1px solid #c9d4e7;
+  background: white;
+  cursor: crosshair;
+  image-rendering: pixelated;
+}
+
+.glyph-card.dirty {
+  border-color: #243bff;
+  box-shadow: 0 0 0 3px rgba(36, 59, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .panel-header {
+    flex-direction: column;
+  }
+
+  .studio-actions,
+  .create-actions {
+    justify-content: flex-start;
+  }
+}

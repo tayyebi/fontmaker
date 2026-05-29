@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FontMaker Studio</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Persian-first font creation</p>
+            <h1>FontMaker Studio</h1>
+            <p class="subtitle">
+              Create Persian fonts with English support, edit glyph cells, and export your work.
+            </p>
+          </div>
+          <button id="toggle-create-button" class="primary">New font</button>
+        </div>
+
+        <form id="create-font-form" class="create-form hidden">
+          <label>
+            Font name
+            <input id="font-name" name="name" type="text" maxlength="80" required />
+          </label>
+          <label>
+            Notes
+            <input id="font-description" name="description" type="text" maxlength="160" />
+          </label>
+          <div class="create-actions">
+            <button type="submit" class="primary">Create font</button>
+            <button type="button" id="cancel-create-button" class="ghost">Cancel</button>
+          </div>
+        </form>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Font</th>
+                <th>Created</th>
+                <th>Edited glyphs</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="fonts-table-body">
+              <tr>
+                <td colspan="4" class="empty-state">No fonts yet. Start with “New font”.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="studio-panel" class="panel hidden">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Studio</p>
+            <h2 id="studio-title">Select a font</h2>
+            <p id="studio-description" class="subtitle">
+              Each tab focuses on a Persian figure or English character set.
+            </p>
+          </div>
+          <div class="studio-actions">
+            <button id="save-studio-button" class="primary" disabled>Save changes</button>
+            <button id="export-font-button" class="ghost" disabled>Export font</button>
+          </div>
+        </div>
+
+        <div class="studio-toolbar">
+          <div id="tab-strip" class="tab-strip"></div>
+          <label class="search-field">
+            Search characters
+            <input id="glyph-search" type="search" placeholder="e.g. ب or A" />
+          </label>
+        </div>
+
+        <div id="studio-status" class="status-message"></div>
+        <div id="glyph-grid" class="glyph-grid"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
